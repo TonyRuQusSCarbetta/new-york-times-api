@@ -37,7 +37,6 @@ class App extends Component {
           return (<div key={idx}>
             <p>{article.snippet}</p>
             <a href={article.web_url} target="_blank">Link</a>
-            <img src={article.multimedia[idx].url} alt="userSearch" />
           </div>);
         })
       }
