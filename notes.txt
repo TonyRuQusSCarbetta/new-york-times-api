@@ -9,3 +9,6 @@ https://github.com/axios/axios
 
 NY TIMES API docs
 http://www.storybench.org/working-with-the-new-york-times-api-in-r/
+
+FORM ON SUBMIT article
+https://medium.com/@aghh1504/1-simple-react-todo-list-52186b62976b
