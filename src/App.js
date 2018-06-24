@@ -9,7 +9,7 @@ class App extends Component {
     userSearch: ''
   }
 
-  userChange = (e) =>{
+  userChange = (e) => {
     this.setState({userSearch: e.target.value})
     // console.log(this.state.userSearch);
   }
@@ -22,39 +22,57 @@ class App extends Component {
   }
 
   onSubmit = (event) => {
-   event.preventDefault()
-   this.setState({
-     userSearch: '',
-     articles: [...this.state.articles, this.state.userSearch]
-   });
- }
+    event.preventDefault()
+    this.setState({
+      userSearch: '',
+      articles: [
+        ...this.state.articles,
+        this.state.userSearch
+      ]
+    });
+  }
 
   render() {
-    return (<div className="center">
-      <h1 className="">NEW YORK TIMES<br /> ARTICLE SEARCH</h1>
+    return (<div className="container">
+      <div className="row">
+        <div className="col-12">
+          <h1 className="mt-5 center">NEW YORK TIMES<br/>
+            ARTICLE SEARCH</h1>
+        </div>
 
-      <form onSubmit={this.onSubmit}>
-      <input type="text"
-            onChange={this.userChange}
-            value={this.state.userSearch}
-            placeholder=" search for..."
-      />
-      <br />
-      <button onClick={this.getArticles} className="btn btn-dark m-3">Click for Articles</button>
+        <div className="col-12 center">
+          <form onSubmit={this.onSubmit}>
+            <input type="text" onChange={this.userChange} value={this.state.userSearch} placeholder=" search for..." id="backToInput"/>
+            <i className="fas fa-search"></i>
+            <br/>
+            <button onClick={this.getArticles} className="btn btn-black m-3">Click for Articles</button>
+          </form>
+        </div>
 
-      {
-        this.state.articles.map((article, idx) => {
-          return (<div key={idx}>
-            <div className="col-md-6 offset-3 bg-light mb-2">
-              <h4 className="bg-light text-dark pt-3 pb-0 mb-2">{article.snippet}</h4>
-                <a href={article.web_url} className="text-secondary p-2" target="_blank">
-                  Click this Link to view the full article.
-                </a>
-            </div>
-          </div>);
-        })
-      }
-    </form>
+        <div className="col-md-2"></div>
+        <div className="col-md-8 center mb-5">
+
+          {
+            this.state.articles.map((article, idx) => {
+              return (<div key={idx}>
+                <div className="center mb-2 articles p-3 pt-0">
+                  <h4 className="text-dark pt-3 pb-0 mb-2">{article.snippet}</h4>
+
+                  <a href={article.web_url} className="text-secondary p-2" target="_blank">
+                    Click this Link to view the full article.
+                  </a>
+                </div>
+              </div>);
+            })
+          }
+          <a href="#backToInput" className="fixed-bottom backToInput mb-1">
+            <i className="far fa-arrow-alt-circle-up">
+              Back to Search</i>
+          </a>
+        </div>
+        <div className="col-md-2"></div>
+
+      </div>
     </div>);
   }
 }
