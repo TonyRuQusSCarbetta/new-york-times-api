@@ -18,4 +18,4 @@ git pull
 
 To merge branches:
 git merge master
-(for example if we are on a branch called Changes, we use git merge master & this will merge whatever is in master to conflict)
+(for example if we are on a branch called Changes, we use git merge master & this will merge whatever is in master to Changes)
