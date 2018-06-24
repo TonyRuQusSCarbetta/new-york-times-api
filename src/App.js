@@ -29,6 +29,8 @@ class App extends Component {
         ...this.state.articles,
         this.state.userSearch
       ]
+      //... a BRACKET with three dots is a spread operator, this returns all the properties of an element,
+      //the reason this is returning the new articles instead of the blank one is because of the THIS KEYWORD
     });
   }
 

@@ -19,3 +19,9 @@ git pull
 To merge branches:
 git merge master
 (for example if we are on a branch called Changes, we use git merge master & this will merge whatever is in master to Changes)
+
+This article fixed my error!
+https://blog.plover.com/prog/git-ff-error.html
+
+Another quick spot is
+www.ohshitgit.com
